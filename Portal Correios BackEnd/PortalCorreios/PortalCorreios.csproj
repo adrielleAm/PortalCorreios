@@ -6,11 +6,14 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.4" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.5.1" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\PortalCorreios.Business\PortalCorreios.Business.csproj" />
     <ProjectReference Include="..\PortalCorreios.Domain.Dto\PortalCorreios.Domain.Dto.csproj" />
     <ProjectReference Include="..\PortalCorreios.Interface.Business\PortalCorreios.Interface.Business.csproj" />
+    <ProjectReference Include="..\PortalCorreios.Repository\PortalCorreios.Repository.csproj" />
     <ProjectReference Include="..\PortalCorreios.Utils\PortalCorreios.Utils.csproj" />
   </ItemGroup>
 

@@ -20,7 +20,7 @@ namespace PortalCorreios.Business
         public string GetTxtPath()
         {
             var startDirectory =
-            Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName;
+            Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
 
             return startDirectory + @"\arquivos\";
         }
@@ -49,7 +49,7 @@ namespace PortalCorreios.Business
         {
             try
             {
-                if (arquivo.Length > 0)
+                if (arquivo?.Length > 0)
                 {
                     if (ArquivoHelpers.ConvertBytesToMegabytes(arquivo.Length) > 2)
                         throw new ArquivoException(ArquivoException.TamanhoExcedido);

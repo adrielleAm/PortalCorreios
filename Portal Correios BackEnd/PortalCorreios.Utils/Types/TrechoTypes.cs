@@ -2,6 +2,6 @@
 {
     public static class TrechoTypes
     {
-        public const string NomeArquivo = "Trecho";
+        public const string NomeArquivo = "trechos.txt";
     }
 }

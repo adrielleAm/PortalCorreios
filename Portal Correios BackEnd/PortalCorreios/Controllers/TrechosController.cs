@@ -6,8 +6,8 @@ using PortalCorreios.Utils;
 
 namespace PortalCorreios.Controllers
 {
+    [Route("api/[controller]")]
     [ApiController]
-    [Route("[controller]")]
     public class TrechosController : ControllerBase
     {
         private readonly ITrechosBusiness _trechosBusiness;
