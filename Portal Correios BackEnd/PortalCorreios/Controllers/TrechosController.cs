@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using PortalCorreios.Domain.Dto;
+using PortalCorreios.Interface.Business;
 using PortalCorreios.Utils;
 
 namespace PortalCorreios.Controllers
@@ -12,15 +10,22 @@ namespace PortalCorreios.Controllers
     [Route("[controller]")]
     public class TrechosController : ControllerBase
     {
-        [HttpGet("Trechos")]
-        public async Task<IEnumerable<TrechoDto>> Trechos()
+        private readonly ITrechosBusiness _trechosBusiness;
+
+        public TrechosController(ITrechosBusiness trechoBusiness)
+        {
+            _trechosBusiness = trechoBusiness;
+        }
+
+        [HttpPost("Upload")]
+        public async Task<IActionResult> UploadAsync(IFormFile arquivo)
         {
             try
             {
-                var retorno = await _trechoBussiness.ObterTrechosCadastrados();
-                return Ok(retorno);
+                await _trechosBusiness.UploadArquivo(arquivo);
+                return Ok();
             }
-            catch (TrechoException ex)
+            catch (ArquivoException ex)
             {
                 return StatusCode(500, ex.Message);
             }

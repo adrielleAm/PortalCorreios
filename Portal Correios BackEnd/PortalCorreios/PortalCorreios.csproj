@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\PortalCorreios.Domain.Dto\PortalCorreios.Domain.Dto.csproj" />
+    <ProjectReference Include="..\PortalCorreios.Interface.Business\PortalCorreios.Interface.Business.csproj" />
     <ProjectReference Include="..\PortalCorreios.Utils\PortalCorreios.Utils.csproj" />
   </ItemGroup>
 

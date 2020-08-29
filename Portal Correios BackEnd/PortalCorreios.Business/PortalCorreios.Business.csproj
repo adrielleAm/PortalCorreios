@@ -4,4 +4,14 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="3.1.7" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PortalCorreios.Interface.Business\PortalCorreios.Interface.Business.csproj" />
+    <ProjectReference Include="..\PortalCorreios.Interface.Repository\PortalCorreios.Interface.Repository.csproj" />
+    <ProjectReference Include="..\PortalCorreios.Utils\PortalCorreios.Utils.csproj" />
+  </ItemGroup>
+
 </Project>
