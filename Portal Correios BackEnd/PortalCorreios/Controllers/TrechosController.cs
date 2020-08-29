@@ -30,5 +30,19 @@ namespace PortalCorreios.Controllers
                 return StatusCode(500, ex.Message);
             }
         }
+
+        [HttpGet("Ler")]
+        public async Task<IActionResult> LerAsync()
+        {
+            try
+            {
+                await _trechosBusiness.RecuperarTrechos();
+                return Ok();
+            }
+            catch (ArquivoException ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
+        }
     }
 }

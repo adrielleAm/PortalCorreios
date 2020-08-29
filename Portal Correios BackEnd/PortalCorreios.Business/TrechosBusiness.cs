@@ -26,9 +26,13 @@ namespace PortalCorreios.Business
             await _arquivoBusiness.UploadArquivo(arquivo, filePath);
         }
 
-        public List<TrechoDto> RecuperarTrechos()
+        public async Task<List<TrechoDto>> RecuperarTrechos()
         {
             var filePath = Path.Combine(_arquivoBusiness.GetTxtPath(), TrechoTypes.NomeArquivo);
+            var teste = await _arquivoBusiness.LerLinhasArquivo(filePath);
+
+            //separar strings
+            teste[1].Split(' ', StringSplitOptions.None);
 
             return new List<TrechoDto>();
         }

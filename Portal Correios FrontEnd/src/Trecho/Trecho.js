@@ -2,11 +2,12 @@ import React from 'react';
 import axios from 'axios';
 import Upload from './../Upload/Upload';
 
+const SERVICE_URL = process.env.REACT_APP_BV_API_URL;
 const onClickHandler = async (arquivo) => {
     const data = new FormData()
     data.append('arquivo', arquivo)
     console.log(data)
-    const URL = "https://localhost:5001/api/Trechos/Upload"
+    const URL = `${SERVICE_URL}/api/Trechos/Upload`;
     await axios.post(URL, data);
 }
 

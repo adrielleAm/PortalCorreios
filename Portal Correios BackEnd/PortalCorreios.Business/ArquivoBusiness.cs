@@ -25,11 +25,11 @@ namespace PortalCorreios.Business
             return startDirectory + @"\arquivos\";
         }
 
-        public Task<string[]> LerLinhasArquivo(string arquivoCaminho)
+        public async Task<string[]> LerLinhasArquivo(string arquivoCaminho)
         {
             try
             {
-                return _arquivoRepository.LerLinhasArquivo(arquivoCaminho);
+                return await _arquivoRepository.LerLinhasArquivo(arquivoCaminho);
             }
             catch (FileNotFoundException ex)
             {
