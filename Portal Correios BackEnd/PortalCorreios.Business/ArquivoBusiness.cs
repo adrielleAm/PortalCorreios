@@ -3,6 +3,7 @@ using PortalCorreios.Interface.Business;
 using PortalCorreios.Interface.Repository;
 using PortalCorreios.Utils;
 using PortalCorreios.Utils.Helpers;
+using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 
@@ -30,6 +31,26 @@ namespace PortalCorreios.Business
             try
             {
                 return await _arquivoRepository.LerLinhasArquivo(arquivoCaminho);
+            }
+            catch (FileNotFoundException ex)
+            {
+                throw new ArquivoException(ex.Message);
+            }
+            catch (DirectoryNotFoundException ex)
+            {
+                throw new ArquivoException(($"{ArquivoException.DiretorioNaoEncontrado}: '{ex.Message}')"));
+            }
+            catch (IOException ex)
+            {
+                throw new ArquivoException(ex.Message);
+            }
+        }
+
+        public async Task<List<string>> LerLinhasArquivo(IFormFile arquivo)
+        {
+            try
+            {
+                return await _arquivoRepository.LerLinhasArquivoMemoria(arquivo);
             }
             catch (FileNotFoundException ex)
             {

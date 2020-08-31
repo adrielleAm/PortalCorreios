@@ -25,6 +25,7 @@ namespace PortalCorreios
             services.AddControllers();
 
             services.AddTransient<IArquivoBusiness, ArquivoBusiness>();
+            services.AddTransient<IEncomendaBusiness, EncomendaBusiness>();
             services.AddTransient<ITrechosBusiness, TrechosBusiness>();
 
             services.AddTransient<IArquivoRepository, ArquivoRepository>();

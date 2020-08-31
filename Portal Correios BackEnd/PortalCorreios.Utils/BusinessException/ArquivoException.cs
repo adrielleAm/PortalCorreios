@@ -1,10 +1,11 @@
-﻿using System;
+﻿using PortalCorreios.Utils.BusinessException;
+using System;
 using System.Runtime.Serialization;
 
 namespace PortalCorreios.Utils
 {
     [Serializable]
-    public class ArquivoException : Exception
+    public class ArquivoException : BaseException
     {
         public const string TamanhoExcedido = "Arquivo muito grande";
         public const string DiretorioNaoEncontrado = "A pasta informada não foi encontrada";

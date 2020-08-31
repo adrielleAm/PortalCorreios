@@ -14,6 +14,7 @@ const onClickHandler = async (arquivo) => {
 export default function Trecho(props) {
     return (
         <div className="flex-content">
+            <h3>Trechos</h3>
             <Upload
                 props={props}
                 onClickHandler={onClickHandler}

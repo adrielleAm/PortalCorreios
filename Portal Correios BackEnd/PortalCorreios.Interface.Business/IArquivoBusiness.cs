@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace PortalCorreios.Interface.Business
@@ -10,5 +11,7 @@ namespace PortalCorreios.Interface.Business
         Task UploadArquivo(IFormFile arquivo, string filePath);
 
         Task<string[]> LerLinhasArquivo(string arquivoCaminho);
-    }
+
+        Task<List<string>> LerLinhasArquivo(IFormFile arquivo);
+    };
 }
