@@ -16,8 +16,9 @@ San Andreas possui as seguintes cidades e condados:
  ```
  # Execução do Projeto 
 - Pré Requisitos - SDK do .NET Core
-1 - Executar o projeto Portal Correios BackEnd
-2 - Realizar o upload do arquivo trechos:
+
+-1º - Executar o projeto Portal Correios BackEnd
+-2º - Realizar o upload do arquivo trechos:
 
 #trechos.txt :
  ```
@@ -35,7 +36,7 @@ San Andreas possui as seguintes cidades e condados:
  BC LV 1
 ```
 
-3 - Depois realziar o upload do arquivo 
+- 3º - Depois realziar o upload do arquivo 
 #encomendas.txt :
 ```
  SF WS
